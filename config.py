@@ -2,13 +2,20 @@
 import os
 import re
 
+import random
 """
 可修改区域
 默认使用本地值如果不存在从环境变量中获取值
 """
 
+#环境变量获取最小和最大阅读次数，如果未定义，则使用默认范围 240~360
+READ_MIN = int(os.getenv('READ_MIN', 120))  # 默认最小值 120（1 小时）
+READ_MAX = int(os.getenv('READ_MAX', 720))  # 默认最大值 720（6 小时）
+
+# 生成  READ_NUM 的随机值
+READ_NUM = random.randint(READ_MIN, READ_MAX)
 # 阅读次数 默认120次/60分钟
-READ_NUM = int(os.getenv('READ_NUM') or 120)
+#READ_NUM = int(os.getenv('READ_NUM') or 120)
 # 需要推送时可选，可选pushplus、wxpusher、telegram
 PUSH_METHOD = "" or os.getenv('PUSH_METHOD')
 # pushplus推送时需填
