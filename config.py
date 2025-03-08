@@ -8,8 +8,8 @@ import random
 """
 
 # 先尝试从环境变量获取值，如果环境变量不存在，则使用默认值
-READ_MIN = int(os.getenv('READ_MIN') or 120)  # 先检查环境变量，不存在则使用默认 1小时
-READ_MAX = int(os.getenv('READ_MAX') or 480)  # 先检查环境变量，不存在则使用默认 4小时
+READ_MIN = int(os.getenv('READ_MIN'))  # 先检查环境变量，不存在则使用默认 1小时
+READ_MAX = int(os.getenv('READ_MAX'))  # 先检查环境变量，不存在则使用默认 4小时
 
 # 生成 READ_NUM 的随机值
 READ_NUM = random.randint(READ_MIN, READ_MAX)
