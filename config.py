@@ -9,8 +9,8 @@ import random
 """
 
 #环境变量获取最小和最大阅读次数，如果未定义，则使用默认范围 240~360
-READ_MIN = int(os.getenv('READ_MIN', 120))  # 默认最小值 120（1 小时）
-READ_MAX = int(os.getenv('READ_MAX', 720))  # 默认最大值 720（6 小时）
+READ_MIN = int(os.getenv('READ_MIN', 480))  # 默认最小值 120（4小时）
+READ_MAX = int(os.getenv('READ_MAX', 600))  # 默认最大值 600（5 小时）
 
 # 生成  READ_NUM 的随机值
 READ_NUM = random.randint(READ_MIN, READ_MAX)
